@@ -10,13 +10,17 @@ class TextArranger
     @separated_text
   end
 
+  def string_indexes
+    @string_indexes
+  end
+
   def separate
     @separated_text = @text.split(/\n+/)
   end
 
   def get_string_indexes
     string_indexes = []
-    @separated_text.each_with_index do |text, index|
+    separated_text.each_with_index do |text, index|
       if text[0] != '.'
         string_indexes.push(index)
       end
@@ -26,10 +30,10 @@ class TextArranger
 
   def get_arranged_text
     arranged_text = []
-    arranged_text.push(separated_text[0..@string_indexes[0]])
+    arranged_text.push(separated_text[0..string_indexes[0]])
     i = 0
-    while i < @string_indexes.length - 1
-      arranged_text.push(separated_text[@string_indexes[i]+1..@string_indexes[i+1]])
+    while i < string_indexes.length - 1
+      arranged_text.push(separated_text[string_indexes[i]+1..string_indexes[i+1]])
       i += 1
     end
     arranged_text
