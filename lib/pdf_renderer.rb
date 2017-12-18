@@ -27,6 +27,9 @@ class PdfRenderer
       if text_block.include?(".regular")
         @pdf.font "Courier", :style => :normal
       end
+      if text_block.include?(".paragraph")
+        @pdf.move_down 15
+      end
       @pdf.text text_block.last
     end
   end
