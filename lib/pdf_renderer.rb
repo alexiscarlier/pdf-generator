@@ -5,5 +5,7 @@ class PdfRenderer
     @arranged_text = arranged_text
   end
 
-  
+  def render
+    @pdf.render_file "test.pdf"
+  end
 end
