@@ -10,14 +10,6 @@ class PdfRenderer
     @arranged_text = arranged_text
   end
 
-  def arranged_text
-    @arranged_text
-  end
-
-  def pdf
-    @pdf
-  end
-
   def apply_formatting
     arranged_text.each do |text_block|
       if text_block.include?(".large")

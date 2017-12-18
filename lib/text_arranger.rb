@@ -6,14 +6,6 @@ class TextArranger
     @text = text
   end
 
-  def separated_text
-    @separated_text
-  end
-
-  def string_indexes
-    @string_indexes
-  end
-
   def separate
     @separated_text = @text.split(/\n+/)
   end
