@@ -11,13 +11,11 @@ class TextArranger
   end
 
   def get_string_indexes
-    i = 0
     string_indexes = []
-    while i < @separated_text.length
-      if @separated_text[i][0] != '.'
-        string_indexes.push(i)
+    @separated_text.each_with_index do |text, index|
+      if text[0] != '.'
+        string_indexes.push(index)
       end
-      i += 1
     end
     @string_indexes = string_indexes
   end
