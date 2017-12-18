@@ -3,14 +3,13 @@ require "./lib/pdf_renderer.rb"
 require "./lib/text_arranger"
 
 text = '.large
-My First Document
 .bold
+My First Document
 .italic
 .normal
 .paragraph
 This is my
 .large
-.normal
 very first'
 
 text_arranger = TextArranger.new(text)
