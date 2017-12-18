@@ -19,7 +19,7 @@ class PdfRenderer
   end
 
   def apply_formatting
-  @arranged_text.each do |text_block|
+    arranged_text.each do |text_block|
       if text_block.include?(".large")
         pdf.font_size = LARGE
       end
@@ -44,6 +44,6 @@ class PdfRenderer
 
 
   def render
-    @pdf.render_file "test.pdf"
+    pdf.render_file "test.pdf"
   end
 end
