@@ -27,11 +27,11 @@ end
 end
 
 describe '#get_arranged_text' do
-it 'arranges the text in arrays with strings and commands' do
-  text_arranger.separate
-  text_arranger.get_string_indexes
-  expect(text_arranger.get_arranged_text).to eq [[".large", "My First Document"], [".normal", ".paragraph", "This is my"], [".italic", ".bold", "very first"]]
-end
+  it 'arranges the text in arrays with strings and commands' do
+    text_arranger.separate
+    text_arranger.get_string_indexes
+    expect(text_arranger.get_arranged_text).to eq [[".large", "My First Document"], [".normal", ".paragraph", "This is my"], [".italic", ".bold", "very first"]]
+  end
 end
 
 end

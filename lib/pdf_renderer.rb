@@ -1,5 +1,8 @@
 class PdfRenderer
 
+  LARGE = 25
+  NORMAL = 15
+
   attr_reader :arranged_text, :pdf
 
   def initialize(arranged_text, pdf)
@@ -27,6 +30,7 @@ class PdfRenderer
       @pdf.text text_block.last
     end
   end
+
 
   def render
     @pdf.render_file "test.pdf"
