@@ -10,7 +10,11 @@ My First Document
 .paragraph
 This is my
 .large
-very first'
+very first
+.regular
+.large
+.paragraph
+By Alexis Carlier :)'
 
 text_arranger = TextArranger.new(text)
 text_arranger.separate
