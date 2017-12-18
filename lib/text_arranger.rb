@@ -1,6 +1,6 @@
 class TextArranger
 
-  attr_reader :text, :separated_text, :string_indexes, :arranged_text
+  attr_reader :text, :separated_text, :string_indexes
 
   def initialize(text)
     @text = text
@@ -28,7 +28,7 @@ class TextArranger
       arranged_text.push(@separated_text[@string_indexes[i]+1..@string_indexes[i+1]])
       i += 1
     end
-    @arranged_text = arranged_text
+    arranged_text
   end
 
 end
