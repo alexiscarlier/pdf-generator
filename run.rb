@@ -10,6 +10,7 @@ My First Document
 .paragraph
 This is my
 .large
+.normal
 very first'
 
 text_arranger = TextArranger.new(text)

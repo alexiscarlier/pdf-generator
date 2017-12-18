@@ -13,18 +13,12 @@ class PdfRenderer
   def apply_formatting
     arranged_text.each do |text_block|
       adjust_size(text_block)
-      # if text_block.include?(".large")
-      #   pdf.font_size = LARGE
-      # end
       if text_block.include?(".bold")
         pdf.font "Courier", :style => :bold
       end
       if text_block.include?(".italic")
         pdf.font "Courier", :style => :italic
       end
-      # if text_block.include?(".normal")
-      #   pdf.font_size = NORMAL
-      # end
       if text_block.include?(".regular")
         pdf.font "Courier", :style => :normal
       end
@@ -36,12 +30,8 @@ class PdfRenderer
   end
 
   def adjust_size(text_block)
-    if text_block.include?(".large")
-      pdf.font_size = LARGE
-    end
-    if text_block.include?(".normal")
-      pdf.font_size = NORMAL
-    end
+    pdf.font_size = LARGE if text_block.include?(".large")
+    pdf.font_size = NORMAL if text_block.include?(".normal")
   end
 
   def render
