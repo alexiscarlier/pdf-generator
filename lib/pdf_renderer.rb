@@ -14,11 +14,17 @@ class PdfRenderer
     arranged_text.each do |text_block|
       adjust_size(text_block)
       adjust_style(text_block)
-      if text_block.include?(".paragraph")
-        pdf.move_down 15
-      end
-      pdf.text text_block.last
+      adjust_paragraphs(text_block)
+      create_text(text_block)
     end
+  end
+
+  def adjust_paragraphs(text_block)
+    pdf.move_down 15 if text_block.include?(".paragraph")
+  end
+
+  def create_text(text_block)
+    pdf.text text_block.last
   end
 
   def adjust_style(text_block)
